@@ -1,0 +1,1166 @@
+/* 꿀팁! 헤더/본문/푸터 등 북마크한 영역으로 이동 시 fn+f2 단축키 */
+
+
+/* 구글폰트에서 나눔고딕 로드 */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+/*css초기화: 안하면 컨텐츠 바깥에 마진이 생긴다.*/
+html, body {
+  height: 100%; /*div가 화면 전체 높이 n%를 사용하기 위해 먼저 입력해준다.*/
+  margin: 0;
+  padding: 0;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+
+
+/*헤더*/
+header {
+  position: fixed; /*fixed된 엘레멘트는 다음 엘레멘트들의 배치에 영향을 미치지 않는다.*/
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  background-color: #07bc88;
+  overflow: hidden;
+  z-index: 99999;
+}
+
+#header_wrap {
+  min-width: 930px;
+  overflow: hidden;
+}
+
+
+/*헤더 > 로고*/
+#awrap {
+  width: 173px;
+  padding-left: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  float: left;
+}
+
+#logo_navertv {
+  width: 152px;
+  height: 26px;
+  display: inline-block;
+  margin-top: 2px;
+  background-image: url('logo_navertv.png')
+}
+
+/*헤더 > 검색*/
+#searchbox {
+  display: inline-block;
+  padding-top: 1px;
+}
+
+#searchbox > label {
+  width: 320px;
+  height: 33px;
+  background-color: #ffffff;
+  border: solid 1px #1ea188;
+  float: left;
+}
+
+#searchbox_txt {
+  width: 295px;
+  height: 33px;
+  padding: 0px;
+  padding-left: 10px;
+  border: 0px;
+}
+
+#seachbox_arrow {
+  float: right;
+  margin-right: 10px;
+  margin-top: 16px;
+  width: 5px;
+  height: 3px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url('btn_search_arrow.png')
+}
+
+#searchbox_btn {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  background-image: url('btn_search.png')
+}
+
+/*헤더 > 검색 옆 배너*/
+#banner {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  vertical-align: top;
+
+}
+
+#banner_btn {
+  display: inline-block;
+  width: 25px;
+  height: 18px;
+  vertical-align: top;
+  background-image: url('logo_header_up.png')
+}
+
+#banner_txt {
+  width: 336px;
+  height: 18px;
+  overflow: hidden;
+  padding-left: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  color: #ffffff;
+  vertical-align: top;
+}
+
+/*검색+배너 전체 밑으로 9px 내리기*/
+#bwrap {
+  height: 46px;
+  padding-top: 9px;
+  display: inline-block;
+}
+
+/*우측 버튼*/
+#login_input {
+  float: left;
+  width: 53px;
+  height: 22px;
+  border: solid 1px #1ea188;
+  margin: 16px 21px 10px 0px;
+  display: inline-block;
+  color: #ffffff;
+  background-color: #07bc88;
+}
+
+#btn_menu {
+  float: left;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  border-left: solid 1px #1ea188;
+  padding: 19px 19px 18px 19px;
+  background-color: #07e6b0;
+
+}
+
+#btn_menu_icon {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  background-image: url('icon_menu.png')
+
+}
+
+
+#cwrap {
+  float: right;
+  overflow: hidden; /*부모 밑 자식들이 float되어 있을때 자식들 사이즈를 반영하고 싶다면 추가하는 코드*/
+}
+
+
+
+
+/*왼쪽내비*/
+nav {
+  position: fixed; /*fixed가 아닌 엘레멘트였을 때는 높이가100퍼라 포지션값이 먹지 않았다.*/
+  top: 55px;
+  width: 179px;
+  height: 100%;
+  background-color: white;
+  border-right: solid 1px #999999;
+  overflow-y: scroll;
+  z-index: 9999;
+}
+
+#nav_wrap {
+  height: 1030px;
+}
+
+/*스크롤바 커스텀화하기 : IE와 파이어폭스에서는 적용 안됨.*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f2f2f2;
+}
+
+
+
+nav a {   /* 내비 안의 모든 a링크 태그에 언더라인을 없애준다. */
+    text-decoration: none;
+}
+
+/*왼쪽내비_첫번째섹션*/
+#nav_01 > ul {
+
+  margin: 0px;
+  padding: 0px; /* ul은 마진, 패딩이 디폴트로 지정되어 있다.*/
+
+  list-style: none;
+  /* border: solid 1px green; */
+}
+
+
+#nav_01 > ul > li {
+  margin: 0px 12px 0px 12px;
+  /* border: solid 1px pink; */
+}
+
+.menulist { /* 메뉴리스트라는 클래스명의 a태그들 */
+  display: block;
+  width: 155px;
+  height: 44px;
+
+  font-size: 14px;
+  letter-spacing: -0.2px;
+  color: #000000;
+
+  border-bottom: 1px solid #efefef;
+}
+
+
+.menulist > span {
+  display: block;
+  padding-left: 10px;
+  padding-top : 13px;
+  padding-bottom: 13px;
+}
+
+#theme {
+  border-bottom: 0px;
+  height: 40px;
+}
+#theme > span {
+  padding-bottom: 10px;
+}
+
+.menulist_small {
+  display: block;
+  padding-left: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: #444444;
+}
+
+.btn_fold {
+  position: relative;
+  display: block;
+  height: 19px;
+  border-bottom: solid 1px #999999;
+}
+
+#btn_fold_icon {
+  position: absolute;
+  top: 6px;
+  left: 83px;
+
+  width: 13px;
+  height: 9px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url('nav_btn_fold.png');
+
+}
+
+/*왼쪽내비_두번째섹션*/
+#nav_02 {
+  padding: 22px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+
+#nav_02_title {
+  list-style: none;
+  font-size: 12px;
+  color: #555555;
+}
+
+.nav_02_contents > p {
+  font-size: 11px;
+  line-height: 19px;
+  color: #6b6b6b;
+    letter-spacing: -0.5px;
+
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+#btn_channelsearch {
+  display: inline-block;
+  width: 81px;
+  height: 25px;
+  margin-top: 12px;
+  padding: 0px 9px 0px 12px;
+
+  font-size: 12px;
+  color: #000000;
+  border: 1px solid #cfcfcf;
+}
+
+#btn_channelsearch > span {
+  display: inline-block;
+  margin-top: 5px;
+
+}
+
+#btn_go { /*span옆에 span을 두면 각 span에 들어있는 컨텐츠 크기가 달라도 알아서 중앙정렬해준다.*/
+  display: inline-block;
+  width: 5px;
+  height: 7px;
+  margin-top: 0px;
+  background-image: url('nav_btn_go.png')
+
+}
+
+/*왼쪽내비_3번째섹션*/
+
+#nav_03 {
+  padding: 13px;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+
+#nav_03_title {
+  list-style: none;
+  font-size: 11px;
+  color: #555555;
+  padding-left: 9px;
+}
+
+.broadcast_list {
+  margin-top: 9px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 99px;
+
+  margin-bottom: 8px;
+}
+
+.broadcast_list_thumb {
+  flex-basis: 45px;
+  height: 33px;
+  background-image: url('nav_thumbnail.png')
+}
+
+.nav_03_contents2 {
+    border-top: solid 1px #d8d8d8;
+    margin-bottom: 9px;
+}
+
+#tvingtv {
+  display: inline-block;
+  width: 67px;
+  height: 10px;
+  margin-top: 17px;
+  background-image: url('nav_tvingtv.png');
+}
+
+.nav_03_contents2 > span {
+  position: relative;
+  top: -1px;
+  font-size: 11px;
+  color: #7d7e81;
+}
+
+/*왼쪽내비_4번째섹션*/
+
+#nav_04 ul {
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+#nav_04 li a{
+    border: 0px;
+}
+
+#nav_04 li span{
+  padding-top: 8px;
+  padding-bottom: 10px;
+
+}
+
+#nav_04 .menulist {
+  height: 34px;
+}
+
+
+
+
+
+
+/*컨텐츠*/
+#content_wrapper1 { /*wrapper1은 전체를 왼쪽 내비, 위쪽 헤더 피해서 위치를 잡아준다.*/
+  margin-top: 55px;
+  margin-left: 180px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+#content_wrapper2 { /*wrapper2는 wrapper1이 잡아놓은 자리에서 컨텐츠의 마진 값을 한번 더 적용한다.*/
+  margin: 0px auto 0px;
+  width: 1038px;
+
+}
+
+/*movie_grid안 그리드 레이아웃*/
+/*display: inline-block을 사용하면 여백이 생기고,
+float: left를 사용하면 너무 복잡한 문제가 있다.*/
+.movie_grid {
+  width: 1038px;
+  height: 466px;
+
+
+  display: flex;
+  flex-direction: row;
+  border: solid 1px rgba(0, 0, 0, .3);
+
+}
+
+.row_1 {
+  flex-basis: 407px;
+  background-color: #ffffff;
+  border-right: solid 2px #000000;
+
+  display: flex; /*위 부모에서 디스플레이를 flex로 선언해줬어도 해당 엘리멘트에 flex를 적용시키려면 바로 위 부모에 flex선언*/
+  flex-direction: column;
+}
+
+.row_2 {
+  flex-basis: 431px;
+  background-color: #ffffff;
+  border-right: solid 2px #000000;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.row_3 {
+  flex-basis: 196px;
+  background-color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+  /*row_1의 column 레이아웃*/
+.row_1 > .col1 {
+  flex-basis: 282px; /*flex-direction이 column이면 요 flex-basis는 height가 되는 것*/
+}
+
+.row_1 > .col2 {
+  flex-basis: 91px;
+  border-top: solid 1px #000000;
+}
+
+.row_1 > .col3 {
+  flex-basis: 91px;
+  border-top: solid 1px #000000;
+}
+
+  /*row_1의 column 레이아웃*/
+.row_2 > .col1 {
+  flex-basis: 232px; /*flex-direction이 column이면 요 flex-basis는 height가 되는 것*/
+}
+
+.row_2 > .col2 {
+  flex-basis: 232px;
+  border-top: solid 2px #000000;
+}
+
+/*row_1의 column 레이아웃*/
+.row_3 > .col1 {
+flex-basis: 103px; /*flex-direction이 column이면 요 flex-basis는 height가 되는 것*/
+}
+
+.row_3 > .col2 {
+flex-basis: 103px;
+border-top: solid 2px #000000;
+}
+
+.row_3 > .col3 {
+flex-basis: 256px;
+border-top: solid 2px #000000;
+}
+
+.grid_txtarea {
+  float: left;
+  width: 235px;
+  height: 100%;
+  background-color: #2b2b2b;
+}
+
+.grid_picarea {
+  float: left;
+  width: 172px;
+  height: 91px;
+  background-color: yellow;
+}
+
+
+
+
+/*그리드 속 썸네일: type_A: 마우스 오버 시 그라데이션 올라오는 col*/
+/*전체 설정*/
+.row_1 .col1, .row_2 .col1, .row_2 .col2, .row_3 .col1, .row_3 .col2 {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+/* 텍스트박스 사이즈 설정 */
+.col_type_A .title_duration {
+  width: 350px;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: 0.2s linear;
+}
+
+.col_type_A:hover .title_duration {
+  height: 100px;
+  text-overflow: clip;
+  white-space: normal;
+}/* .co_type_A에 마우스오버를 하면, .title_duration의 설정이 바뀐다. */
+
+
+
+
+
+.col_type_A {
+  position: absolute;
+  bottom: 0px;
+  display: inline-block;
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+
+
+
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.col_type_A .wrap {
+  padding: 30px;
+}
+
+.col_type_A .program_title {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+
+}
+
+
+
+.col_type_A .title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+.col_type_A .duration {
+  padding-left: 6px;
+  font-family: "arial", sans-serif;
+  font-size: 13px;
+  color: #8d8d8d
+}
+
+.col_type_A .play_like {
+  font-family: "arial", sans-serif;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+
+.col_type_A .play {
+  display: inline-block;
+  width: 11px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-image: url('grid_play.png');
+}
+
+.col_type_A .play_num {
+  padding-left: 4px;
+}
+
+.col_type_A .like {
+  display: inline-block;
+  width: 14px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-image: url('grid_heart.png');
+  margin-left: 12px;
+}
+
+.col_type_A .like_num {
+  padding-left: 4px;
+}
+
+/* col_3의 작은 type_A들의 폰트사이즈, 패딩등, 예외처리 */
+/* 텍스트박스 사이즈 설정 */
+.col_type_A .title_duration_s {
+  width: 160px;
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: 0.2s linear;
+}
+
+.col_type_A:hover .title_duration_s {
+  height: 55px;
+  text-overflow: clip;
+  white-space: normal;
+}/* .co_type_A에 마우스오버를 하면, .title_duration의 설정이 바뀐다. */
+
+
+
+.col_type_A .wrap_s {
+  padding: 20px;
+}
+
+.row_3 .col_type_A .program_title_s {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+
+.row_3 .col_type_A .title_s {
+  font-size: 15px;
+}
+
+.col_type_A .play_like_s {
+  font-family: "arial", sans-serif;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+/*type_B*/
+.grid_txtarea {
+    text-decoration: none;
+}
+
+.grid_txtarea .txt_wrap {
+  padding-left: 31px;
+  padding-right: 17px;
+  padding-top: 15px;
+
+}
+
+.txt_wrap .program_title {
+  display: block;
+  font-size: 12px;
+  color: #7baeef;
+    margin-bottom: 5px;
+
+}
+
+.txt_wrap .title {
+
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+
+}
+
+.txt_wrap .duration {
+  font-family: "arial";
+  font-size: 13px;
+  color: #808080;
+
+}
+
+
+/*type_C*/
+.row_3 .col3 {
+  position: relative;
+}
+
+.grid_circle_list {
+  position: absolute;
+  z-index: 999;
+  padding: 15px;
+}
+
+.grid_bg {
+  /* filter:blur(10px); */
+  position: absolute;
+
+}
+
+.overlay {
+  position: absolute;
+  width: 196px;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 99;
+}
+
+
+
+.grid_circle_thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-size: cover;
+  background-image: url('grid_circle_thumb.png');
+  margin: 30px auto 0px;
+}
+
+.grid_circle_list > #title {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+
+  margin-top: 12px;
+}
+
+.grid_circle_list > #txt {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+  opacity: 0.8;
+
+  margin-top: 12px;
+}
+
+
+
+
+
+
+/*top100 레이아웃*/
+.top100 {
+/* position: relative; */
+height: 243px;
+margin-top: 50px;
+/* border: solid 1px green; */
+}
+
+/* top100 타이틀헤더 부분 */
+/* 요소들을 인라인블럭으로 가로로 쌓음 */
+.top100_head {
+}
+
+.top100_title {
+  /* position: absolute; */
+  font-size: 21px;
+  font-weight: 700;
+  vertical-align: top;
+}
+
+/* 전체재생버튼 */
+.btn_repeat {
+  /* 패딩을 포함해서 박스 사이즈를 측정함 */
+  box-sizing: border-box;
+  display: inline-block;
+  width: 85px;
+  height: 25px;
+  padding: 4px 8px 0 8px;
+  border: 1px solid #d8d8d8;
+  margin-left: 10px;
+  text-decoration: none;
+  /* 옆의 텍스트와 세로상 정렬 */
+  vertical-align: top;
+}
+
+.btn_repeat:hover {
+  background-color: #f1f1f1;
+}
+
+.repeat_icon {
+  display: inline-block;
+  width: 17px;
+  height: 14px;
+  background-image: url('top100_repeat.png');
+}
+
+.repeat_txt {
+  font-size: 12px;
+  color: #101010;
+  vertical-align: top;
+}
+
+/* 우측 좌우버튼 */
+/* float right로 오른쪽으로 띄움 */
+.top100_btnLR {
+  float: right;
+}
+
+.btnL {
+  float: left;
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  background-image: url('top100_btnL.png');
+}
+
+.btnR {
+  float: left;
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  background-image: url('top100_btnR.png');
+}
+
+/* 우측 노티문장 */
+.top100_noti {
+  float: left;
+  font-size: 12px;
+  color: #888d90;
+  /* line-height를 사용하면 텍스트의 높이를 조정할 수 있다. */
+  line-height: 29px;
+  margin-right: 15px;
+}
+
+/* top100 리스트 */
+.top100_list {
+  /* border: solid 1px pink; */
+  list-style-type: none;
+  padding: 0px;
+}
+
+.top100_list > li {
+  width: 197px;
+  height: 206px;
+  padding-right: 6px;
+  border-right: solid 1px #e4e4e4;
+  margin-right: 6px;
+  float: left;
+
+
+}
+
+.top100_list > li > .thumbnail {
+  position: relative;
+  display: inline-block;
+  width: 195px;
+  height: 108px;
+  background-color: #ffffff;
+  border: solid 1px rgba(0, 0, 0, .1);
+  /* background-size: cover;
+  background-image: url('top100_movie.jpg'); */
+}
+
+.playtime {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+
+  width: 25px;
+  height: 16px;
+  padding: 4px 8px 2px 8px;
+
+  font-family: 'arial';
+  font-size: 11px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+/* 플레이타임 위에 마우스 오버시 나오는 시계아이콘 */
+.playtime_hover {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 45px;
+  height: 45px;
+  background-image: url('top100_time.png');
+  display: none;
+}
+
+/* .playtime:hover {
+  display: none;
+} */
+
+/* .playtime:hover .playtime_hover {
+  opacity: 1;
+} */
+
+
+
+
+.top100_list a {
+  text-decoration: none;
+}
+
+
+/* 우측 텍스트 */
+.txt_title {
+  display: block;
+  font-size: 13px;
+  line-height: 17px;
+  color: #101010;
+}
+.txt_programtitle {
+  font-size: 12px;
+  color: #214cc9;
+  display: block;
+  margin-top: 8px;
+}
+
+.top100_play_like {
+  font-family: 'arial';
+  font-size: 12px;
+  color: #555555;
+  display: block;
+  margin-top: 8px;
+}
+
+.top100_play {
+  display: inline-block;
+  width: 7px;
+  height: 11px;
+  background-image: url('top100_play.png');
+  margin-right: 2px;
+}
+
+.top100_like {
+  display: inline-block;
+  width: 11px;
+  height: 9px;
+  background-image: url('top100_heart.png');
+  margin-left: 8px;
+  margin-right: 2px;
+}
+
+.txt_info {
+  width: 150px;
+  display: inline-block;
+}
+
+
+/* 왼쪽 랭킹텍스트 */
+
+.rank {
+  display: inline-block;
+  width: 40px;
+  vertical-align: top;
+}
+
+.ran_num {
+  display: inline-block;
+  width: 20px;
+  height: 33px;
+  background-repeat: no-repeat;
+}
+
+.ranking {
+  display: block;
+  width: 11px;
+  height: 2px;
+  background-image: url('top100_none.png');
+  margin-left: 3px;
+  margin-top: 35px;
+}
+
+/* 텍스트정보 전체 마진 */
+.txt {
+  margin-top: 15px;
+}
+
+
+/* 맨 오른쪽 썸네일 옆 라인 지우기 */
+.top100_list > #rank5 {
+  margin-left: -1px;
+  padding-right: 0;
+  margin-right: 0;
+  border-right: 0px;
+}
+
+/* 2~4번쨰 썸네일 안 이미지 변경, ranknum변경 */
+
+#rank1 > .thumbnail {
+  background-size: cover;
+  background-image: url('top100_movie.jpg');
+}
+
+#rank2 > .thumbnail {
+  background-size: cover;
+  background-image: url('top100_movie2.jpg');
+}
+
+#rank3 > .thumbnail {
+  background-size: cover;
+  background-image: url('top100_movie3.jpg');
+}
+
+#rank4 > .thumbnail {
+  background-size: cover;
+  background-image: url('top100_movie4.jpg');
+}
+
+#rank5 > .thumbnail {
+  background-size: cover;
+  background-image: url('top100_movie5.jpg');
+}
+
+#rank1  .rank_num {
+  display: inline-block;
+  width: 15px;
+  height: 33px;
+  background-position: 0 0;
+  background-image: url('sp_top_num.png');
+}
+
+#rank2  .rank_num {
+  display: inline-block;
+  width: 20px;
+  height: 33px;
+  background-position: -47px 0px;
+  background-repeat: no-repeat;
+  background-image: url('sp_top_num.png');
+}
+
+#rank3  .rank_num {
+  display: inline-block;
+  width: 20px;
+  height: 33px;
+  background-position: -89px 0px;
+  background-repeat: no-repeat;
+  background-image: url('sp_top_num.png');
+}
+
+#rank4  .rank_num {
+  display: inline-block;
+  width: 22px;
+  height: 33px;
+  background-position: -129px 0px;
+  background-repeat: no-repeat;
+  background-image: url('sp_top_num.png');
+}
+
+
+#rank5  .rank_num {
+  display: inline-block;
+  width: 22px;
+  height: 33px;
+  background-position: -171px 0px;
+  background-repeat: no-repeat;
+  background-image: url('sp_top_num.png');
+}
+
+
+
+/*footer*/
+footer {
+  margin-top: 50px;
+  padding-left: 180px;
+  height: 121px;
+
+  background-color: #ffffff;
+  border-top: 1px solid #d8d8d8;
+}
+
+
+/* footer 첫쨋줄 */
+.footer_link {
+  /* ul태그에는 기본으로 마진이 들어가있다. 초기화 */
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.footer_link li {
+  list-style: none;
+  /* 세로방향으로 쌓인 li 가로로 배열 */
+  display: inline-block;
+}
+
+.list_line {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  width: 1px;
+  height: 11px;
+  margin-left: 2px;
+  margin-right: 2px;
+  background-image: url('footer_list.gif');
+}
+
+.footer_link a {
+  /* a태그의 컬러, 밑줄 등 디폴트 설정은 a태그에 직접 변경해줘야 한다. */
+  font-size: 12px;
+  text-decoration: none;
+  color: #3f3f49;
+}
+
+
+
+/* footer의 둘쨋줄 */
+.footer_txt {
+  font-size: 11px;
+  color: #555555;
+}
+
+
+
+/* footer의 셋쨋줄 */
+footer address {
+  font-family: 'verdana';
+  font-style: normal;
+  font-size: 10px;
+  color: #555555;
+}
+
+.naverlogo {
+  display: inline-block;
+  width: 63px;
+  height: 11px;
+  background-repeat: no-repeat;
+  background-image: url('ci_naver.png');
+  position: relative;
+  top: 2px;
+}
+
+#copyright {
+  margin-left: 10px;
+}
+
+.navercorplogo {
+  display: inline-block;
+  width: 61px;
+  height: 10px;
+  position: relative;
+  top: 1px;
+  background-image: url('ci_navercorp.png');
+}
+
+#allrights {
+  margin-left: 2px;
+}
+
+/* 내용물 세 줄 중앙정렬 */
+.footer_wrapper {
+  /* 내용물인 텍스트들을 센터정렬시켜준다. */
+  text-align: center;
+  margin-top: 30px;
+  /* 최소한은 1098px. 그이하로 줄어들면 overflow하는 것을 숨겨라. */
+  min-width: 1098px;
+  overflow: hidden;
+}
